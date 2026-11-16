@@ -1,0 +1,30 @@
+/*
+    APP LAYOUT
+    Aquí defino el layout general del notion
+*/
+
+@layer components {
+
+    .app_layout {
+        @apply flex h-dvh overflow-hidden
+               bg-page text-neutral-100;
+
+        .app_layout_content {
+            @apply flex min-w-0 flex-1 flex-col;
+        }
+
+        .app_layout_header {
+            @apply flex min-w-0 shrink-0 items-center
+                   bg-page;
+            > header {
+                @apply min-w-0 flex-1;
+            }
+        }
+
+        .app_layout_main {
+            @apply min-h-0 flex-1 overflow-y-auto;
+        }
+
+    }
+
+}

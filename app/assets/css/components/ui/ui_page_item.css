@@ -1,0 +1,112 @@
+/*
+    UI PAGE ITEM
+    Estilos de UiPageItem.vue se usa pageitem en la sidebar y en los breadcrumbs, por eso existen dos variantes:
+    - Sidebar: muestra el chevron y los botones al hacer hover
+    - Breadcrumb: muestra únicamente el icono y el label
+*/
+
+@layer components {
+
+    .ui_page_item {
+        @apply relative flex w-full min-w-0
+               items-center rounded-sm
+               transition-colors;
+        min-height: 32px;
+        padding: 0 8px;
+        background-color: transparent;
+        color: var(--color-neutral-100);
+
+        .ui_page_item_content {
+            @apply flex min-w-0 flex-1 items-center
+                   gap-2 py-1.5;
+
+            /* emoji */
+            .ui_page_item_emoji {
+                @apply flex size-5 shrink-0 items-center
+                       justify-center font-emoji;
+
+                font-size: 16px;
+            }
+
+            /* icono */
+            .ui_page_item_icon {
+                @apply flex size-5 shrink-0 items-center
+                       justify-center;
+            }
+
+            /* label */
+            .ui_page_item_label {
+                @apply min-w-0 flex-1 truncate
+                       text-label-regular;
+            }
+        }
+
+
+        /* chevron izquierdo (me hubeira gustado que se remplazase el icono por el chevron como en notion pero ya lo hice así y no lo cambié*/
+        .ui_page_item_chevron {
+            /* Solo aparece en hover*/
+            @apply absolute left-1 top-1/2
+                   -translate-y-1/2 opacity-0
+                   pointer-events-none;
+            color: var(--color-neutral-300);
+        }
+
+
+        /* iconos/botones de las page  + y ... */
+        .ui_page_item_actions {
+            @apply hidden shrink-0 items-center gap-1;
+
+            .ui_page_item_action {
+                @apply flex size-6 shrink-0 items-center
+                       justify-center rounded-sm;
+                border: none;
+                background-color: transparent;
+                color: var(--color-neutral-300);
+                cursor: default;
+
+                /* hover */
+                &:hover {
+                    background-color: var(--color-neutral-500);
+                }
+            }
+        }
+
+        /* HoverL */
+        &:hover {
+            background-color: var(--color-neutral-500);
+        }
+
+        /* Página activa (clon de notion!!!) */
+        &.is_active {
+            background-color: var(--color-neutral-500);
+        }
+
+
+        /* variante sidebar*/
+        &.is_sidebar {
+
+            /* hover */
+            &:hover {
+                .ui_page_item_chevron {
+                    @apply opacity-100;
+                }
+
+                .ui_page_item_content {
+                    padding-left: 18px;
+                }
+
+                .ui_page_item_actions {
+                    @apply flex;
+                }
+            }
+        }
+
+
+        /*variante breadcrumbs*/
+        &.is_breadcrumb {
+            @apply w-auto;
+        }
+
+    }
+
+}

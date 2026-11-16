@@ -1,0 +1,15 @@
+/*
+    PAGE COVER
+    Aquí los estilos de la imagen de portada de la pag de notion
+*/
+
+@layer components {
+    /* Contenedor imagen de portada */
+    .page_cover {
+        @apply h-70 w-full overflow-hidden;
+    }
+    /* Imagen*/
+    .page_cover_image {
+        @apply h-full w-full object-cover object-center;
+    }
+}

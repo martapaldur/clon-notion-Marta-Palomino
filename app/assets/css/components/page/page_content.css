@@ -1,0 +1,31 @@
+
+/*
+    PAGE CONTENT
+    Aquí los estilos del contenido principal de la página de Notion de PageContent.vue.
+*/
+
+@layer components {
+
+    .page_content {
+        @apply mx-auto flex max-w-3xl
+               flex-col px-8 pb-8;
+
+        /* Emoji de la página */
+        .page_content_emoji {
+            @apply -mt-8 mb-8 font-emoji;
+            font-size: 4.875rem;
+            line-height: 4.875rem;
+        }
+
+        /* Título de la página */
+        .page_content_title {
+            @apply text-h1;
+        }
+
+        .page_content_blocks {
+            @apply mt-10 flex flex-col gap-4;
+        }
+
+    }
+
+}

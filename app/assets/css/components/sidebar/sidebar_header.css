@@ -1,0 +1,103 @@
+/*
+    SIDEBAR HEADER
+    stilos de la parte superior de la sidebar (Botón del workspace con el avatar y el nombre y el botón de cerrar sidebar)
+    Al hacer hover sobre el workspace aparecen el chevron y el botón para cerrar la sidebar
+*/
+
+@layer components {
+
+    .sidebar_header {
+        @apply w-full shrink-0 px-2 pt-2 pb-4;
+
+        /* WORKSPACE */
+        .sidebar_workspace_header {
+            @apply flex w-full items-center justify-between
+                   rounded-full px-2 py-1 transition-colors;
+            height: 29px;
+            background-color: var(--color-neutral-600);
+
+            .sidebar_workspace_button {
+                @apply flex min-w-0 flex-1 items-center gap-2;
+
+                border: none;
+                background: transparent;
+                color: var(--color-neutral-100);
+                cursor: pointer;
+                text-align: left;
+            }
+
+            /* avatar */
+            .sidebar_workspace_avatar {
+                @apply relative flex h-5 w-5 shrink-0
+                       items-center justify-center rounded-sm
+                       text-label-small;
+                background-color: var(--color-neutral-500);
+                color: var(--color-neutral-100);
+
+                /* badge de notificación */
+                .sidebar_workspace_status {
+                    @apply absolute rounded-full bg-coral;
+                    width: 6px;
+                    height: 6px;
+                    top: -2px;
+                    right: -2px;
+                }
+            }
+
+            .sidebar_workspace_name {
+                @apply truncate text-label-medium;
+            }
+
+            /* chevron */
+            .sidebar_workspace_chevron {
+                @apply shrink-0 opacity-0 transition-opacity;
+
+                color: var(--color-neutral-300);
+            }
+
+
+            /* botón para colapsar la sidebar */
+            .sidebar_header_collapse {
+                @apply flex shrink-0 items-center justify-center
+                       rounded-full p-1 transition-colors;
+
+                border: none;
+                background-color: transparent;
+                color: var(--color-neutral-300);
+                cursor: pointer;
+
+                opacity: 0;
+                pointer-events: none;
+
+                /* hover */
+                &:hover {
+                    background-color: var(--color-neutral-400);
+                    color: var(--color-neutral-100);
+                }
+            }
+
+
+            /* hover del workspace */
+
+            &:hover {
+                background-color: var(--color-neutral-500);
+
+                .sidebar_workspace_avatar {
+                    background-color: var(--color-neutral-400);
+                }
+
+                .sidebar_workspace_chevron {
+                    @apply opacity-100;
+                }
+
+                .sidebar_header_collapse {
+                    @apply opacity-100;
+                    pointer-events: auto;
+                }
+            }
+
+        }
+
+    }
+
+}

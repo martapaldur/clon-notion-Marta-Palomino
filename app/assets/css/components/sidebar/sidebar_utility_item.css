@@ -1,0 +1,48 @@
+/*
+    SIDEBAR UTILITY ITEM
+    Este archivo define los estilos de los elementos de utilities, que son los ultimos de la sidebar (los que no tinene titulo de sección)
+
+*/
+
+@layer components {
+
+    .sidebar_utility_item {
+        @apply flex w-full min-w-0 items-center
+               gap-2 rounded-sm p-2
+               transition-colors;
+        color: var(--color-neutral-100);
+
+
+        /* icono */
+        .sidebar_utility_item_icon {
+            @apply flex size-5 shrink-0 items-center
+                   justify-center;
+            color: var(--color-neutral-300);
+        }
+
+        /* Texto */
+        .sidebar_utility_item_label {
+            @apply min-w-0 flex-1 truncate text-label-regular;
+        }
+
+        /* Icono de link externo */
+        .sidebar_utility_item_external {
+            @apply flex size-4 shrink-0 items-center
+                   justify-center opacity-0
+                   transition-opacity;
+
+            color: var(--color-neutral-300);
+        }
+
+        /* hover */
+        &:hover {
+            background-color: var(--color-neutral-500);
+			
+            .sidebar_utility_item_external {
+                @apply opacity-100;
+            }
+        }
+
+    }
+
+}

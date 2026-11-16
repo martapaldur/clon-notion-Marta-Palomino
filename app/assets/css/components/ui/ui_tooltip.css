@@ -1,0 +1,66 @@
+/*
+    UI TOOLTIP
+    Este archivo define los estilos del tooltip que aparece en hover sobre algunos elementos, se que hay elementos de la sidebar 
+	tendrían que tenerlo y no lo tienen, pero eso es una mejora para el futuro porque se me pasó al principio
+
+    Cada tooltip puede contener:
+    - El texto del tooltip
+    - el texto del atajo de teclado
+
+    Puede aparecer en cuatro posiciones: arriba, abajo, izquierda o derecha.
+*/
+
+@layer components {
+
+    .ui_tooltip {
+        /* Contenedor del botón y su tooltip, sirve como refe para posicionar */
+        @apply relative inline-flex shrink-0;
+
+        /* contenido del tooltip */
+        .ui_tooltip_content {
+            /* Por defecto está oculto y no recibe clics. */
+            @apply absolute z-100 hidden w-max
+                   px-2 py-1
+                   bg-neutral-500 text-neutral-100
+                   border border-neutral-300 rounded-sm
+                   text-label-small
+                   whitespace-nowrap pointer-events-none;
+
+            /* estilo del atajo de teclado */
+            > span {
+                @apply ml-1 opacity-75;
+            }
+
+
+            /* posiciones de los tooltips */
+
+            /* ABAJO */
+            &.is_bottom {
+                @apply top-full left-1/2 mt-2 -translate-x-1/2;
+            }
+
+            /* ARRIBA */
+            &.is_top {
+                @apply bottom-full left-1/2 mb-2 -translate-x-1/2;
+            }
+
+            /* IZQUIERDA */
+            &.is_left {
+                @apply right-full top-1/2 mr-2 -translate-y-1/2;
+            }
+
+            /* DERECHA */
+            &.is_right {
+                @apply left-full top-1/2 ml-2 -translate-y-1/2;
+            }
+        }
+
+        /* hover y focus */
+        &:hover > .ui_tooltip_content,
+        &:has(:focus-visible) > .ui_tooltip_content {
+            @apply block;
+        }
+
+    }
+
+}

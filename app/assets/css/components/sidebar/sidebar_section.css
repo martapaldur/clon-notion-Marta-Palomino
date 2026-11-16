@@ -1,0 +1,27 @@
+/*
+    SIDEBAR SECTION
+    Estilos secciones de la sidebar
+*/
+
+@layer components {
+
+    .sidebar_section {
+        @apply w-full mb-5;
+
+        .sidebar_section_content {
+            @apply flex flex-col gap-1 mt-2;
+        }
+
+        /* En notion apps aumenta el espacio inferior de esta sección*/
+        &.is_apps {
+            @apply mb-8;
+        }
+
+        /* En utilities no hay margen inferior */
+        &.is_utilities {
+            @apply mb-0;
+        }
+
+    }
+
+}

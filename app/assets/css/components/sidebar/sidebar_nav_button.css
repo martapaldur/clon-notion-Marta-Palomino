@@ -1,0 +1,53 @@
+/*
+    SIDEBAR NAV BUTTON
+    Eestilos de los botones de navegación superiores de la sidebar
+*/
+
+@layer components {
+
+    .sidebar_nav_button {
+        @apply flex items-center justify-center
+               rounded-full transition-colors;
+        height: 36px;
+        padding: 0 4px;
+        gap: 4px;
+        background-color: transparent;
+        color: var(--color-neutral-300);
+        cursor: pointer;
+
+        /* hover */
+        &:hover {
+            background-color: var(--color-neutral-500);
+            color: var(--color-neutral-100);
+        }
+
+        /* active */
+        &.is_active {
+            padding: 0 8px;
+            background-color: var(--color-neutral-500);
+            color: var(--color-neutral-100);
+        }
+
+        /* icono */
+        .sidebar_nav_button_icon {
+            @apply relative flex shrink-0;
+
+            /* badge de notificaciones */
+            .sidebar_nav_button_badge {
+                @apply absolute -right-2 -top-2
+                       flex h-4 min-w-4 items-center
+                       justify-center rounded-full px-1
+                       text-label-xs;
+                background-color: var(--color-coral);
+                color: var(--color-neutral-100);
+            }
+        }
+
+        /* label del botón */
+        .sidebar_nav_button_label {
+            @apply whitespace-nowrap text-label-medium;
+        }
+
+    }
+
+}

@@ -1,0 +1,27 @@
+
+/*
+    SIDEBAR PRIMARY NAV
+    Estilos de la nav del sidebar
+*/
+
+@layer components {
+
+    .sidebar_primary_nav {
+        @apply flex w-full min-w-0 shrink-0
+               items-center justify-between
+               box-border px-2 pb-3;
+        gap: 8px;
+
+        /* izquierda, botones nav */
+        .sidebar_primary_nav_group {
+            @apply flex min-w-0 items-center gap-2;
+        }
+
+        /* derecha, search */
+        .sidebar_primary_nav_actions {
+            @apply ml-auto flex shrink-0 items-center;
+        }
+
+    }
+
+}

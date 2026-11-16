@@ -1,0 +1,39 @@
+
+/*
+    SIDEBAR FOOTER
+    Este archivo define los estilos del footer de la sidebar, el botón de new
+*/
+
+@layer components {
+
+    .sidebar_footer {
+        @apply w-full shrink-0
+               border-t border-neutral-400/25
+               px-2 py-3;
+
+        .sidebar_footer_new_button {
+            @apply flex w-full items-center
+                   justify-center gap-2
+                   rounded-full px-2
+                   text-label-regular
+                   transition-colors;
+
+            /* default */
+            height: 49px;
+            border: 1px solid var(--color-neutral-300);
+            background-color: var(--color-neutral-500);
+            color: var(--color-neutral-300);
+            cursor: default;
+
+            /* hover */
+            &:hover {
+                background-color: var(--color-neutral-400);
+                color: var(--color-neutral-200);
+                border-color: transparent;
+            }
+
+        }
+
+    }
+
+}

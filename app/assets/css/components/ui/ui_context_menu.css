@@ -1,0 +1,87 @@
+/*
+    UI CONTEXT MENU
+    estilos de los menús contextuales del header y del dragger de los bloques de page
+
+*/
+
+@layer components {
+
+    .ui_context_menu {
+        @apply absolute right-0 top-full z-50
+               mt-2 w-67.5 rounded-md
+               border border-neutral-400/30
+               bg-neutral-600 p-2
+               text-neutral-100 shadow-xl;
+        max-height: 80vh;
+        overflow: visible;
+
+
+        /* conteindo del menu*/
+        .ui_context_menu_items {
+            @apply mt-2;
+
+            .ui_context_menu_option {
+                @apply relative;
+
+
+                /* submenu */
+                .ui_context_submenu {
+                    @apply absolute left-full top-0 z-50
+                           hidden w-62.5 rounded-md
+                           border border-neutral-400/30
+                           bg-neutral-600 p-1 shadow-xl;
+                    max-height: 75vh;
+                    overflow-y: auto;
+                }
+
+                &:hover > .ui_context_submenu {
+                    @apply block;
+                }
+            }
+
+
+            /* botones del menu*/
+            .ui_context_menu_item {
+                @apply flex w-full items-center gap-2
+                       rounded-sm px-2 py-1.5
+                       text-left text-label-regular
+                       text-neutral-100 cursor-pointer;
+
+                /* hover */
+                &:hover {
+                    @apply bg-neutral-500;
+                }
+
+                /* iconos */
+                svg {
+                    @apply shrink-0;
+                }
+
+                /* texto */
+                .ui_context_menu_label {
+                    @apply min-w-0 flex-1;
+                }
+
+                /* textos de atahos del teclado */
+                .ui_context_menu_shortcut {
+                    @apply shrink-0 text-label-small
+                           text-neutral-300;
+                }
+            }
+
+            /* títulos*/
+            .ui_context_menu_title {
+                @apply block px-2 py-2
+                       text-label-small text-neutral-300;
+            }
+
+            /* separadores */
+            .ui_context_menu_separator {
+                @apply my-1 border-t border-neutral-400/30;
+            }
+
+        }
+
+    }
+
+}

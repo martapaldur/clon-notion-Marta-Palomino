@@ -1,0 +1,70 @@
+/*
+    PAGE BLOCK
+    Aquí defino los estilos de los bloques de contenido de page
+    Solamente he definido bloques que son texto, así que cada bloque contiene:
+    - Uun heading o un párrafo
+    - Los dos botones laterales que aparecen al hacer hover
+*/
+
+@layer components {
+
+    .page_block {
+        @apply relative w-full min-w-0;
+        
+        /* ESPACIADO DE LOS BLOQUES */
+
+        .page_block_content {
+            @apply w-full min-w-0;
+
+            /* espaciado heading 1 */
+            > h2 {
+                @apply pb-4;
+            }
+
+            /* espaciado heading 2 */
+            > h3 {
+                @apply pb-3;
+            }
+        }
+
+        /* espaciado de los p, excepto el último bloque */
+        &:not(:last-child) .page_block_content > p {
+            @apply pb-3;
+        }
+
+
+        /* BOTONES LATERALES */
+        .page_block_buttons {
+            /* Por defecto están ocultos y no reciben clics. */
+            @apply absolute right-full top-0
+                   flex items-start gap-1
+                   pr-4 opacity-0
+                   pointer-events-none
+                   transition-opacity;
+
+            .ui_button.has_icon {
+                @apply size-6 p-0
+                       bg-transparent text-neutral-400;
+                &:hover {
+                    @apply bg-neutral-500 text-neutral-300;
+                }
+            }
+        }
+
+        .page_block_menu_anchor {
+            @apply relative;
+        }
+
+        /* l0S borones aparecen hacer hover*/
+        &:hover .page_block_buttons {
+            @apply opacity-100 pointer-events-auto;
+        }
+
+        /* los botones se quedan visibles cuando el menú está abierto */
+        &.is_menu_open .page_block_buttons {
+            @apply opacity-100 pointer-events-auto;
+        }
+
+    }
+
+}

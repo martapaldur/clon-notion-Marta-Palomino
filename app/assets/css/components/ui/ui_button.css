@@ -1,0 +1,34 @@
+/*
+    UI BUTTON
+    Este archivo define los estilos de los botones del header y de los bloques de contenido de page, existen dos variantes:
+    - Solo texto
+    - Con icono, acompañado o no de texto
+*/
+
+@layer components {
+
+    .ui_button {
+        @apply inline-flex items-center justify-center gap-1 p-2;
+
+        /* radius y cursor */
+        @apply rounded-sm cursor-pointer;
+
+        /* Colores */
+        @apply bg-neutral-600 text-neutral-300;
+
+        /* Tipografía */
+        @apply text-sm font-normal;
+
+        /* Con icono */
+        &.has_icon {
+            @apply text-neutral-200;
+        }
+
+        /* hover */
+        &:hover {
+            @apply bg-neutral-500 text-neutral-200;
+        }
+
+    }
+
+}

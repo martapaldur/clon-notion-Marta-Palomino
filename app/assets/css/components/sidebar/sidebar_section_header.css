@@ -1,0 +1,64 @@
+/*
+    SIDEBAR SECTION HEADER
+    Eestilos de las cabeceras de las secciones de la sidebar
+*/
+
+@layer components {
+
+    .sidebar_section_header {
+        @apply flex w-full min-w-0 items-center
+               rounded-sm p-2 transition-colors;
+        background-color: transparent;
+        color: var(--color-neutral-300);
+
+        /* botón para desplegar */
+        .sidebar_section_header_toggle {
+            @apply flex min-w-0 flex-1 items-center
+                   gap-1 text-left;
+            border: none;
+            padding: 0;
+            background-color: transparent;
+            color: inherit;
+            cursor: pointer;
+
+            /* Título */
+            .sidebar_section_header_title {
+                @apply truncate text-label-small;
+            }
+
+            /* chevron */
+            .sidebar_section_header_chevron {
+                @apply inline-flex shrink-0 opacity-0;
+            }
+        }
+
+        /* iconoS */
+        .sidebar_section_header_actions {
+            /* Los iconos aparecen a la derecha por defecto están ocultos. */
+            @apply ml-auto hidden shrink-0
+                   items-center gap-2;
+            pointer-events: none;
+
+            .sidebar_section_header_action {
+                @apply inline-flex size-4 shrink-0
+                       items-center justify-center;
+                color: var(--color-neutral-300);
+            }
+        }
+
+		/* hover */
+        &:hover {
+            background-color: var(--color-neutral-500);
+			
+            .sidebar_section_header_chevron {
+                @apply opacity-100;
+            }
+
+            .sidebar_section_header_actions {
+                @apply flex;
+            }
+        }
+
+    }
+
+}

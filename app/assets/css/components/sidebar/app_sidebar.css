@@ -1,0 +1,46 @@
+/*
+    APP SIDEBAR
+    estilos de la barra lateral 
+*/
+
+@layer components {
+
+    .app_sidebar {
+        @apply relative flex h-full shrink-0 flex-col
+               border-r border-neutral-400/25
+               bg-neutral-600 text-neutral-100;
+
+        /* El ancho se actualiza desde AppSidebar.vue
+           EStablezco un mínimo de 270px y un máximo de 600px que es lo que hay en la app de notion original */
+        width: var(--sidebar_width, 270px);
+        min-width: 270px;
+        max-width: 600px;
+
+        .sidebar_resize_handle {
+            /* Crea una zona invisible de 8px en el borde derecho para poder arrastrar y cambiar el ancho. */
+            @apply absolute inset-y-0 z-50;
+            right: -4px;
+            width: 8px;
+
+            /* Muestra el cursor de redimensionamiento y evita*/
+            cursor: col-resize;
+
+            &::after {
+                /* Dibuja una línea vertical en la zonade arrastre */
+                content: "";
+
+                @apply absolute inset-y-0 left-1/2
+                       w-px -translate-x-1/2
+                       bg-neutral-400 opacity-0
+                       transition-opacity;
+            }
+
+            /* para mostrar el indicador en hover s */
+            &:hover::after {
+                @apply opacity-100;
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,25 @@
+/*
+    HEADER BREADCRUMBS
+*/
+
+@layer components {
+
+    .header_breadcrumbs {
+        @apply min-w-0;
+
+        .header_breadcrumbs_list {
+            @apply flex min-w-0 items-center overflow-hidden;
+        }
+
+        .header_breadcrumbs_item {
+            @apply flex min-w-0 items-center;
+            max-width: 240px;
+        }
+
+        .header_breadcrumbs_separator {
+            @apply mx-1 shrink-0 text-neutral-300;
+        }
+
+    }
+
+}

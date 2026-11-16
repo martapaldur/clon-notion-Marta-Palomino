@@ -1,0 +1,33 @@
+/*
+    UI SEARCHBAR
+    Estilos de la searchbar
+*/
+
+@layer components {
+
+    .ui_searchbar {
+        @apply flex w-full items-center gap-2
+               rounded-sm border border-neutral-400/30
+               bg-neutral-500 px-2 py-1.5
+               text-neutral-300;
+
+        /* focus (sé que este azul tendría que ir en una variante pero no lo hice al principio ni en la auditoría y al final no lo he metido, si hago mejoras lo arreglo*/
+        &:focus-within {
+            @apply border-blue-500;
+        }
+
+        /* input */
+        .ui_searchbar_input {
+            @apply min-w-0 flex-1 border-0 bg-transparent
+                   text-label-regular text-neutral-100
+                   outline-none;
+
+            /* placeholder */
+            &::placeholder {
+                @apply text-neutral-300;
+            }
+        }
+
+    }
+
+}
